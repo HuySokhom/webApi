@@ -89,6 +89,7 @@ MetronicApp.factory('settings', ['$rootScope', function($rootScope) {
 /* Setup App Main Controller */
 MetronicApp.controller('AppController', ['$scope', '$rootScope', function($scope, $rootScope) {
     $scope.$on('$viewContentLoaded', function() {
+        $scope.title = 'Hello World';
         App.initComponents(); // init core components
         //Layout.init(); //  Init entire layout(header, footer, sidebar, etc) on page load if the partials included in server side instead of loading with ng-include directive 
     });
@@ -154,26 +155,26 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         // Dashboard
         .state('dashboard', {
             url: "/dashboard.html",
-            templateUrl: "views/dashboard.html",            
+            templateUrl: "views/dashboard.html",
             data: {pageTitle: 'Admin Dashboard Template'},
             controller: "DashboardController",
-            resolve: {
-                deps: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '../assets/global/plugins/morris/morris.css',                            
-                            '../assets/global/plugins/morris/morris.min.js',
-                            '../assets/global/plugins/morris/raphael-min.js',                            
-                            '../assets/global/plugins/jquery.sparkline.min.js',
-
-                            '../assets/pages/scripts/dashboard.min.js',
-                            'js/controllers/DashboardController.js',
-                        ] 
-                    });
-                }]
-            }
+            //resolve: {
+            //    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+            //        return $ocLazyLoad.load({
+            //            name: 'MetronicApp',
+            //            insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+            //            files: [
+            //                '../assets/global/plugins/morris/morris.css',
+            //                '../assets/global/plugins/morris/morris.min.js',
+            //                '../assets/global/plugins/morris/raphael-min.js',
+            //                '../assets/global/plugins/jquery.sparkline.min.js',
+            //
+            //                '../assets/pages/scripts/dashboard.min.js',
+            //                'js/controllers/DashboardController.js',
+            //            ]
+            //        });
+            //    }]
+            //}
         })
 
         // Blank Page
