@@ -30,14 +30,6 @@
     <body ng-controller="AppController"
           class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-sidebar-closed-hide-logo page-on-load"
           ng-class="{'page-sidebar-closed': settings.layout.pageSidebarClosed}">
-        <div class="container">
-            <div class="content" data-ng-bind="title">
-                <h1 class="title">Laravel 5</h1>
-            </div>
-        </div>
-
-
-
         <!-- BEGIN PAGE SPINNER -->
         <div ng-spinner-bar class="page-spinner-bar">
             <div class="bounce1"></div>

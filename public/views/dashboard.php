@@ -6,9 +6,12 @@
     </li>
     <li class="active"> Dashboard </li>
 </ul>
+<?php
+    echo '<h1>Hello World</h1>';
+?>
 <!-- END PAGE BREADCRUMB -->
 <!-- BEGIN MAIN CONTENT -->
-<div ng-controller="DashboardController">
+<div>
     <div class="note note-info">
         <h3>Meet Metronic AngularJS Version!
             <span class="close" data-close="note"></span>
